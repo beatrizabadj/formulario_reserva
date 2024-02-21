@@ -1,0 +1,47 @@
+/* confirmacion_style.css */
+
+body {
+    font-family: 'Comic Sans MS', cursive;
+    background-image: url('/static/images/aeropuerto.png');
+    background-size: cover;
+    color: #333;
+}
+
+h1 {
+    color: #ffffff;
+    text-align: center;
+}
+
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 80%;
+    background-color: rgba(255, 255, 255,0.5);
+    border-radius:5px;
+}
+
+td, th {
+    padding: 12px;
+    border: 1px solid #dddddd;
+    text-align: left;
+    
+}
+
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255,0.8);
+}
+
+input[type="submit"] {
+    background-color: #f7bd36;
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #bf9745;
+}
+
+p{
+    color:white;
+    text-align:center;
+}

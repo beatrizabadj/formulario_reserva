@@ -1,0 +1,33 @@
+from flask import Flask, render_template,request
+
+app=Flask(__name__)
+@app.route('/')
+def index():
+    return render_template('formulario_reserva.html')
+
+@app.route('/confirmacion',methods=['POST'])
+def confirmacion():
+    datos_reserva={
+        'nombre':request.form['nombre'],
+        'apellido':request.form['apellido'],
+        'email':request.form['email'],
+        'destino':request.form['destino'],
+        'telefono_prefijo':request.form['telefono_prefijo'],
+        'telefono_numero':request.form['telefono_numero'],
+        'fecha':request.form['fecha'],
+        'necesidades':request.form['necesidades']
+    }
+
+#guardamos los datos en un archivo de texto
+    with open('reserva.txt','a') as file:
+        file.write(f"Nombre: {datos_reserva['nombre']}\n")
+        file.write(f"Apellido: {datos_reserva['apellido']}\n")
+        file.write(f"Email: {datos_reserva['email']}\n")
+        file.write(f"Destino: {datos_reserva['destino']}\n")
+        file.write(f"Teléfono: {datos_reserva['telefono_prefijo']} {datos_reserva['telefono_numero']}\n")
+        file.write(f"Fecha: {datos_reserva['fecha']}\n")
+        file.write(f"Necesidades: {datos_reserva['necesidades']}\n")
+    return render_template('confirmacion.html',datos_reserva=datos_reserva)
+
+if __name__=='__main__':
+    app.run(debug=True)

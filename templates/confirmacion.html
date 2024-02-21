@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='confirmacion_style.css') }}">
+    <title>Confirmación de Reserva</title>
+</head>
+<body>
+    <h1>Confirmación de Reserva</h1>
+    <p>¡Reserva realizada con éxito! Muchas gracias por comprar en VuelosFantásticos.</p>
+    <table>
+        <tr>
+            <td><strong>Nombre:</strong></td>
+            <td>{{ datos_reserva.nombre }}</td>
+        </tr>
+        <tr>
+            <td><strong>Apellidos:</strong></td>
+            <td>{{ datos_reserva.apellido }}</td>
+        </tr>
+        <tr>
+            <td><strong>Email:</strong></td>
+            <td>{{ datos_reserva.email }}</td>
+        </tr>
+        <tr>
+            <td><strong>Destino:</strong></td>
+            <td>{{ datos_reserva.destino }}</td>
+        </tr>
+        <tr>
+            <td><strong>Teléfono:</strong></td>
+            <td>{{ datos_reserva.telefono_prefijo }} {{ datos_reserva.telefono_numero }}</td>
+        </tr>
+        <tr>
+            <td><strong>Fecha:</strong></td>
+            <td>{{ datos_reserva.fecha }}</td>
+        </tr>
+        <tr>
+            <td><strong>Necesidades:</strong></td>
+            <td>{{ datos_reserva.necesidades }}</td>
+        </tr>
+    </table>
+    <p>¡Esperamos verte pronto!</p>
+</body>
+</html>
